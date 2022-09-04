@@ -32,7 +32,7 @@ class WelcomePage extends StatelessWidget {
         child: ClipPath(
           clipper: OvalTopBorderClipper(),
           child: Container(
-            color: Colors.white,
+            color: Theme.of(context).colorScheme.background,
             padding:
                 const EdgeInsets.symmetric(horizontal: 64.0, vertical: 48.0),
             child: Column(
@@ -44,11 +44,14 @@ class WelcomePage extends StatelessWidget {
                   text: TextSpan(
                       text: 'i Più Veloci Nel Consegnare ',
                       style: Theme.of(context).textTheme.headline4?.copyWith(
-                          fontWeight: FontWeight.bold, color: Colors.black87),
+                            fontWeight: FontWeight.bold,
+                          ),
                       children: [
                         TextSpan(
                           text: 'Cibo',
-                          style: TextStyle(color: Colors.red[700]),
+                          style: TextStyle(
+                            color: Theme.of(context).primaryColor,
+                          ),
                         ),
                       ]),
                 ),
@@ -61,14 +64,12 @@ class WelcomePage extends StatelessWidget {
                 ),
                 ElevatedButton(
                   style: ElevatedButton.styleFrom(
-                      backgroundColor: Colors.red[700],
-                      padding: const EdgeInsets.symmetric(
-                        vertical: 16,
-                        horizontal: 64,
-                      ),
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(100),
-                      )),
+                    backgroundColor: Theme.of(context).primaryColor,
+                    padding: const EdgeInsets.symmetric(
+                      vertical: 16,
+                      horizontal: 64,
+                    ),
+                  ),
                   onPressed: () => Navigator.push(
                     context,
                     PageRouteBuilder(

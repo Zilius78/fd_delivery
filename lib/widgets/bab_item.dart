@@ -26,9 +26,9 @@ class BottomAppBarItem extends StatelessWidget {
                 ? Stack(
                     alignment: Alignment.center,
                     children: [
-                      _icon(),
-                      if (selected) _selectedDecorator(),
-                      if (count != null) _count(),
+                      _icon(context),
+                      if (selected) _selectedDecorator(context),
+                      if (count != null) _count(context),
                     ],
                   )
                 : null,
@@ -36,21 +36,22 @@ class BottomAppBarItem extends StatelessWidget {
         ),
       );
 
-  Widget _icon() => Icon(icon, color: selected ? Colors.red[700] : Colors.grey);
+  Widget _icon(BuildContext context) => Icon(icon,
+      color: selected ? Theme.of(context).primaryColor : Colors.grey);
 
-  Widget _selectedDecorator() => Positioned(
+  Widget _selectedDecorator(BuildContext context) => Positioned(
         bottom: 0,
         child: Container(
           width: 4,
           height: 4,
           decoration: BoxDecoration(
             shape: BoxShape.circle,
-            color: Colors.red[700],
+            color: Theme.of(context).primaryColor,
           ),
         ),
       );
 
-  Widget _count() => Positioned(
+  Widget _count(BuildContext context) => Positioned(
         top: 4,
         child: Container(
           margin: const EdgeInsets.only(left: 16.0),
@@ -58,14 +59,14 @@ class BottomAppBarItem extends StatelessWidget {
           height: 16,
           decoration: BoxDecoration(
             shape: BoxShape.circle,
-            color: Colors.red[700],
+            color: Theme.of(context).primaryColor,
           ),
           child: Center(
               child: Text(
             count.toString(),
             style: TextStyle(
               fontSize: 8,
-              color: Colors.grey[100],
+              color: Theme.of(context).colorScheme.onPrimary,
             ),
           )),
         ),

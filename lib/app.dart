@@ -47,7 +47,7 @@ class App extends StatelessWidget {
       brightness: Brightness.light,
       elevatedButtonTheme: ElevatedButtonThemeData(
         style: ElevatedButton.styleFrom(
-          backgroundColor: secondaryColor,
+          primary: secondaryColor,
           elevation: 0,
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(100),
@@ -67,7 +67,7 @@ class App extends StatelessWidget {
     final primaryColor = Colors.red[700]!;
     final primaryColorDark = Colors.red[900]!;
     final secondaryColor = Colors.orangeAccent[100]!;
-    final surfaceColor = Colors.black26;
+    const surfaceColor = Colors.black26;
     return ThemeData(
       primaryColor: primaryColor,
       primaryColorDark: primaryColorDark,
@@ -82,7 +82,7 @@ class App extends StatelessWidget {
       ),
       elevatedButtonTheme: ElevatedButtonThemeData(
         style: ElevatedButton.styleFrom(
-          backgroundColor: secondaryColor,
+          primary: secondaryColor,
           elevation: 0,
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(100),

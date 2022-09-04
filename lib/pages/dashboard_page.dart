@@ -123,7 +123,7 @@ class DashboardPage extends StatelessWidget {
                     child: ElevatedButton(
                       style: ElevatedButton.styleFrom(
                         elevation: 0,
-                        backgroundColor: Theme.of(context).primaryColor,
+                        primary: Theme.of(context).primaryColor,
                       ),
                       onPressed: () {},
                       child: const Text('Ordina ora'),

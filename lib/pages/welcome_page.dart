@@ -64,7 +64,7 @@ class WelcomePage extends StatelessWidget {
                 ),
                 ElevatedButton(
                   style: ElevatedButton.styleFrom(
-                    backgroundColor: Theme.of(context).primaryColor,
+                    primary: Theme.of(context).primaryColor,
                     padding: const EdgeInsets.symmetric(
                       vertical: 16,
                       horizontal: 64,

@@ -176,7 +176,7 @@ class FoodPage extends StatelessWidget {
         child: ElevatedButton(
           style: ElevatedButton.styleFrom(
             padding: const EdgeInsets.symmetric(vertical: 16, horizontal: 64),
-            backgroundColor: Theme.of(context).primaryColor,
+            primary: Theme.of(context).primaryColor,
           ),
           onPressed: () {},
           child: const Text('Aggiungi al carrello'),

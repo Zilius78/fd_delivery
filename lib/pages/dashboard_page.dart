@@ -1,5 +1,5 @@
 import 'package:fd_delivery/cubits/dark_mode_cubit.dart'; //
-import 'package:fd_delivery/mocks.dart';
+
 import 'package:fd_delivery/pages/food_page.dart';
 import 'package:fd_delivery/widgets/bab_item.dart';
 import 'package:fd_delivery/widgets/food_app_bar.dart';
@@ -7,6 +7,8 @@ import 'package:fd_delivery/widgets/food_item.dart';
 import 'package:flutter/material.dart'; //
 import 'package:flutter_bloc/flutter_bloc.dart'; //
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+
+import '../flavors.dart';
 
 class DashboardPage extends StatelessWidget {
   const DashboardPage({Key? key}) : super(key: key);
@@ -123,7 +125,7 @@ class DashboardPage extends StatelessWidget {
                     child: ElevatedButton(
                       style: ElevatedButton.styleFrom(
                         elevation: 0,
-                        primary: Theme.of(context).primaryColor,
+                        backgroundColor: Theme.of(context).primaryColor,
                       ),
                       onPressed: () {},
                       child: const Text('Ordina ora'),
@@ -135,7 +137,7 @@ class DashboardPage extends StatelessWidget {
           ),
           Expanded(
               child: Image.asset(
-            'assets/images/devscooter.png',
+            F.devscooter,
             fit: BoxFit.fill,
           )),
         ],
@@ -150,8 +152,8 @@ class DashboardPage extends StatelessWidget {
               margin: const EdgeInsets.only(top: 16),
               height: 50,
               child: ListView.separated(
-                itemBuilder: (_, index) => Mocks.categories[index],
-                itemCount: Mocks.categories.length,
+                itemBuilder: (_, index) => F.categories[index],
+                itemCount: F.categories.length,
                 scrollDirection: Axis.horizontal,
                 separatorBuilder: (BuildContext context, int index) =>
                     Container(
@@ -219,10 +221,10 @@ class DashboardPage extends StatelessWidget {
                       );
 
                   return ListView.separated(
-                    itemBuilder: (_, index) => Mocks.foods[index].copyWith(
+                    itemBuilder: (_, index) => F.foods[index].copyWith(
                       onTap: onTap,
                     ),
-                    itemCount: Mocks.foods.length,
+                    itemCount: F.foods.length,
                     scrollDirection: Axis.horizontal,
                     separatorBuilder: (BuildContext context, int index) =>
                         Container(

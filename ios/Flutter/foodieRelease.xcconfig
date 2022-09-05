@@ -1,0 +1,6 @@
+#include "Generated.xcconfig"
+
+FLUTTER_TARGET=lib/main_foodie.dart
+ASSET_PREFIX=foodie
+BUNDLE_NAME=Foodie App
+BUNDLE_DISPLAY_NAME=Foodie App

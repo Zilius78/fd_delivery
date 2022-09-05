@@ -2,7 +2,9 @@ import 'package:fd_delivery/widgets/food_app_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
-import '../mocks.dart';
+
+
+import '../flavors.dart';
 
 class FoodPage extends StatelessWidget {
   const FoodPage({super.key});
@@ -25,7 +27,7 @@ class FoodPage extends StatelessWidget {
         left: 0,
         right: 0,
         child: Container(
-          padding: const EdgeInsets.all(24.0),
+          padding: const EdgeInsets.all(12.0),
           decoration: BoxDecoration(
             color: Theme.of(context).colorScheme.background,
             borderRadius: const BorderRadius.only(
@@ -84,14 +86,14 @@ class FoodPage extends StatelessWidget {
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text(Mocks.foods.first.name,
+              Text(F.foods.first.name,
                   style: Theme.of(context)
                       .textTheme
                       .headline6
                       ?.copyWith(fontWeight: FontWeight.bold)),
               Padding(
                 padding: const EdgeInsets.only(top: 8.0),
-                child: Text(Mocks.foods.first.description,
+                child: Text(F.foods.first.description,
                     style: Theme.of(context).textTheme.caption),
               ),
             ],
@@ -105,7 +107,7 @@ class FoodPage extends StatelessWidget {
                   ),
               children: [
                 TextSpan(
-                  text: Mocks.foods.first.price,
+                  text: F.foods.first.price,
                   style: Theme.of(context).textTheme.headline6,
                 ),
               ],
@@ -159,7 +161,7 @@ class FoodPage extends StatelessWidget {
   Widget _description(BuildContext context) => RichText(
         textAlign: TextAlign.justify,
         text: TextSpan(
-            text: Mocks.foods.first.caption,
+            text: F.foods.first.caption,
             style: Theme.of(context).textTheme.caption?.copyWith(fontSize: 14),
             children: [
               TextSpan(
@@ -176,7 +178,7 @@ class FoodPage extends StatelessWidget {
         child: ElevatedButton(
           style: ElevatedButton.styleFrom(
             padding: const EdgeInsets.symmetric(vertical: 16, horizontal: 64),
-            primary: Theme.of(context).primaryColor,
+            backgroundColor: Theme.of(context).primaryColor,
           ),
           onPressed: () {},
           child: const Text('Aggiungi al carrello'),
@@ -186,7 +188,7 @@ class FoodPage extends StatelessWidget {
       top: 56,
       left: 24,
       right: 24,
-      child: Image.asset(Mocks.foods.first.image));
+      child: Image.asset(F.foods.first.image));
 
   Widget _appBar(BuildContext context) => Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
